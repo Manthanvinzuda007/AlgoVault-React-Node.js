@@ -1,0 +1,122 @@
+[
+  {
+    "id": "user-001",
+    "name": "Manthan Vinzuda",
+    "username": "manthan_v",
+    "email": "manthan@example.com",
+    "passwordHash": "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+    "role": "admin",
+    "xp": 1240,
+    "streak": 15,
+    "solvedProblems": [
+      "prob-001",
+      "prob-002",
+      "prob-003",
+      "prob-005"
+    ],
+    "joinedAt": "2025-01-01T10:30:00Z",
+    "lastActive": "2026-03-20T12:35:20.971Z",
+    "country": "IN"
+  },
+  {
+    "id": "user-002",
+    "name": "Arjun Sharma",
+    "username": "arjun_dsa",
+    "email": "arjun@example.com",
+    "passwordHash": "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+    "role": "user",
+    "xp": 980,
+    "streak": 8,
+    "solvedProblems": [
+      "prob-001",
+      "prob-004",
+      "prob-007"
+    ],
+    "joinedAt": "2025-01-10T10:30:00Z",
+    "lastActive": "2025-03-19T10:00:00Z",
+    "country": "IN"
+  },
+  {
+    "id": "user-003",
+    "name": "Priya Nair",
+    "username": "priya_codes",
+    "email": "priya@example.com",
+    "passwordHash": "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+    "role": "user",
+    "xp": 760,
+    "streak": 5,
+    "solvedProblems": [
+      "prob-001",
+      "prob-002"
+    ],
+    "joinedAt": "2025-02-01T10:30:00Z",
+    "lastActive": "2025-03-18T14:00:00Z",
+    "country": "IN"
+  },
+  {
+    "id": "user-004",
+    "name": "Alex Chen",
+    "username": "alex_algo",
+    "email": "alex@example.com",
+    "passwordHash": "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+    "role": "user",
+    "xp": 1560,
+    "streak": 22,
+    "solvedProblems": [
+      "prob-001",
+      "prob-002",
+      "prob-003",
+      "prob-004",
+      "prob-005",
+      "prob-006",
+      "prob-007"
+    ],
+    "joinedAt": "2025-01-05T10:30:00Z",
+    "lastActive": "2025-03-20T07:00:00Z",
+    "country": "US"
+  },
+  {
+    "id": "user-005",
+    "name": "Sofia Martinez",
+    "username": "sofia_m",
+    "email": "sofia@example.com",
+    "passwordHash": "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+    "role": "user",
+    "xp": 620,
+    "streak": 3,
+    "solvedProblems": [
+      "prob-001"
+    ],
+    "joinedAt": "2025-02-15T10:30:00Z",
+    "lastActive": "2025-03-17T09:00:00Z",
+    "country": "ES"
+  },
+  {
+    "id": "d3ceee6e-54b4-4057-a62b-1934c89b5115",
+    "name": "Manthan Vinzuda ",
+    "username": "mn18_07",
+    "email": "manthanvinzuda@gmail.com",
+    "passwordHash": "$2a$10$ojsna9x2UyK250590dMhy.WkYryw9m2WzmYIS4K7PxJ0fo2qXx6bS",
+    "role": "user",
+    "xp": 0,
+    "streak": 0,
+    "solvedProblems": [],
+    "joinedAt": "2026-03-20T12:54:24.331Z",
+    "lastActive": "2026-03-20T12:54:24.331Z",
+    "country": "IN"
+  },
+  {
+    "id": "dcaf826f-cdcc-4c40-81df-c6220a99b77c",
+    "name": "Nupur ",
+    "username": "nupur_07",
+    "email": "ndlvymn@gmail.com",
+    "passwordHash": "$2a$10$VYaK/0GtVXi5YSBNDC3chO1z9gJ5Dvupx5Kz4RQhb.lSVKgC4ssJm",
+    "role": "user",
+    "xp": 0,
+    "streak": 0,
+    "solvedProblems": [],
+    "joinedAt": "2026-03-25T11:18:27.788Z",
+    "lastActive": "2026-03-25T11:18:27.788Z",
+    "country": "IN"
+  }
+]

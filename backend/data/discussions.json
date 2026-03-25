@@ -1,0 +1,58 @@
+[
+  {
+    "id": "disc-001",
+    "title": "Best approach for Two Sum — HashMap vs Brute Force?",
+    "body": "I tried brute force O(n²) first and it passes, but I want to understand the HashMap approach better. Can anyone break it down?",
+    "authorId": "user-002",
+    "authorName": "Arjun Sharma",
+    "authorUsername": "arjun_dsa",
+    "tags": ["Arrays", "Hash Map"],
+    "votes": 24,
+    "comments": [
+      {
+        "id": "comment-001",
+        "authorId": "user-001",
+        "authorName": "Manthan Vinzuda",
+        "authorUsername": "manthan_v",
+        "body": "The key insight: for each number x, you need (target - x). Store each number in a hashmap as you go. For every new number, check if its complement already exists. This gives you O(n) time and O(n) space.",
+        "votes": 15,
+        "createdAt": "2025-03-18T10:00:00Z"
+      }
+    ],
+    "createdAt": "2025-03-18T08:00:00Z"
+  },
+  {
+    "id": "disc-002",
+    "title": "Understanding DP vs Memoization — what's the real difference?",
+    "body": "I keep seeing both terms used interchangeably but they seem different. Bottom-up vs top-down? Which is better?",
+    "authorId": "user-003",
+    "authorName": "Priya Nair",
+    "authorUsername": "priya_codes",
+    "tags": ["Dynamic Programming"],
+    "votes": 31,
+    "comments": [],
+    "createdAt": "2025-03-17T14:00:00Z"
+  },
+  {
+    "id": "disc-003",
+    "title": "Weekly Challenge: Graph traversal problems compilation",
+    "body": "Sharing a list of graph problems I solved this week, from BFS/DFS basics to Dijkstra. Great for anyone starting graphs!",
+    "authorId": "user-004",
+    "authorName": "Alex Chen",
+    "authorUsername": "alex_algo",
+    "tags": ["Graphs", "BFS", "DFS"],
+    "votes": 47,
+    "comments": [
+      {
+        "id": "comment-002",
+        "authorId": "user-001",
+        "authorName": "Manthan Vinzuda",
+        "authorUsername": "manthan_v",
+        "body": "Great compilation! I'd also add Number of Islands as a must-solve for BFS beginners.",
+        "votes": 8,
+        "createdAt": "2025-03-16T12:00:00Z"
+      }
+    ],
+    "createdAt": "2025-03-16T09:00:00Z"
+  }
+]
