@@ -1,121 +1,81 @@
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
+import { ThemeProvider } from './context/ThemeContext'
+import { AuthProvider } from './context/AuthContext'
+import { ProtectedRoute } from './components/ProtectedRoute'
+import { LoadingScreen } from './components/LoadingScreen'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// Pages
+import LandingPage from './pages/LandingPage'
+import { LoginPage, RegisterPage } from './pages/AuthPages'
+import HomePage from './pages/HomePage'
+import ExplorePage from './pages/ExplorePage'
+import ProblemPage from './pages/ProblemPage'
+import LeaderboardPage from './pages/LeaderboardPage'
+import DiscussPage from './pages/DiscussPage'
+import { PracticePage, AboutPage, NotFoundPage } from './pages/OtherPages'
 
+function AppRoutes() {
+  const location = useLocation()
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Routes location={location} key={location.pathname}>
+      {/* Public */}
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/explore" element={<ExplorePage />} />
+      <Route path="/leaderboard" element={<LeaderboardPage />} />
+      <Route path="/discuss" element={<DiscussPage />} />
+      <Route path="/about" element={<AboutPage />} />
 
-      <div className="ticks"></div>
+      {/* Protected */}
+      <Route path="/dashboard" element={
+        <ProtectedRoute><HomePage /></ProtectedRoute>
+      } />
+      <Route path="/practice" element={
+        <ProtectedRoute><PracticePage /></ProtectedRoute>
+      } />
+      <Route path="/problem/:id" element={
+        <ProtectedRoute><ProblemPage /></ProtectedRoute>
+      } />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      {/* 404 */}
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   )
 }
 
-export default App
+export default function App() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  return (
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          {isLoading && <LoadingScreen onDone={() => setIsLoading(false)} />}
+          {!isLoading && (
+            <>
+              <AppRoutes />
+              <Toaster
+                position="top-right"
+                toastOptions={{
+                  style: {
+                    background: 'var(--bg-secondary)',
+                    color: 'var(--text-primary)',
+                    border: '1px solid var(--border-color)',
+                    fontFamily: 'var(--font-ui)',
+                    fontSize: '0.875rem',
+                    boxShadow: 'var(--shadow-lg)',
+                  },
+                  success: { iconTheme: { primary: '#4caf50', secondary: '#fff' } },
+                  error: { iconTheme: { primary: '#f44336', secondary: '#fff' } },
+                }}
+              />
+            </>
+          )}
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
+  )
+}
